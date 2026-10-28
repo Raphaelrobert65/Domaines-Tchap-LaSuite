@@ -10,8 +10,8 @@
 <!-- LOVABLE:END -->
 
 ## Project rules
-- Domain-opening logic lives in pure functions in `src/lib/tchap-check.ts` (tested); UI only calls them — keeps the business rule auditable.
-- All public URLs/links live in `src/config/site.ts`; `null` means "not provided" and the link is hidden — never render `#` links.
-- No backend, no Lovable Cloud, no tracking: the page calls the Tchap API directly from the browser (CORS `*` observed).
-- Styling uses La Suite × Marianne tokens in `src/styles.css`, not shadcn defaults.
-- The "domain not open" answer (any domain or subdomain whose instance is not an agent one) shows the Tchap team's fixed copy and links to the access-request form whose URL lives in `src/config/site.ts` — keep the wording and URL verbatim unless the team restates them.
+- The published site is the static root (`index.html`, `styles.css`, `app.js`, `assets/`): no build, relative paths only, works at a domain root and under a GitHub Pages sub-path.
+- `app.js` is the reference implementation of validation and classification; `src/` exists only for the Lovable preview and must mirror it.
+- Links: `null` means "not provided" and the link is hidden — never render `#` links.
+- No backend, no tracking: the page calls the Tchap API directly from the browser (CORS `*` observed); never use `no-cors` or simulated results.
+- The "domain not open" answer shows the Tchap team's fixed copy and the access-request form URL — keep the wording and URL verbatim unless the team restates them.

@@ -83,7 +83,7 @@ a:hover { color: var(--accent-hover); }
   border-radius: var(--radius-button); cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: var(--sp-xs);
   transition: background-color .15s, border-color .15s, color .15s;
 }
-.btn-primary { background: var(--accent); color: var(--on-accent); border: 1px solid var(--accent); }
+.btn-primary { background: var(--accent); color: var(--on-accent); border: 1px solid var(--accent); font-weight: 700; }
 .btn-primary:hover:not(:disabled) { background: var(--accent-hover); border-color: var(--accent-hover); }
 .btn-primary:disabled { cursor: progress; opacity: 0.85; }
 .btn-secondary { background: transparent; color: var(--accent); border: 1px solid var(--accent); }

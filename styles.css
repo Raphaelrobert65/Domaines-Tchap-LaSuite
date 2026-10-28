@@ -4,7 +4,6 @@
 @font-face { font-family: "Marianne"; font-style: normal; font-weight: 500; font-display: swap; src: url("assets/fonts/Marianne-Medium.woff2") format("woff2"); }
 @font-face { font-family: "Marianne"; font-style: normal; font-weight: 700; font-display: swap; src: url("assets/fonts/Marianne-Bold.woff2") format("woff2"); }
 
-/* Marianne — fichiers du paquet officiel DSFR via jsDelivr (CDN tiers). */
 
 /* Tokens La Suite × Marianne — palette France */
 :root {

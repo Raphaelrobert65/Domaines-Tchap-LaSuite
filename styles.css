@@ -1,0 +1,126 @@
+/* Marianne — fichiers DSFR 1.13.0 servis localement (assets/fonts). */
+@font-face { font-family: "Marianne"; font-style: normal; font-weight: 300; font-display: swap; src: url("assets/fonts/Marianne-Light.woff2") format("woff2"); }
+@font-face { font-family: "Marianne"; font-style: normal; font-weight: 400; font-display: swap; src: url("assets/fonts/Marianne-Regular.woff2") format("woff2"); }
+@font-face { font-family: "Marianne"; font-style: normal; font-weight: 500; font-display: swap; src: url("assets/fonts/Marianne-Medium.woff2") format("woff2"); }
+@font-face { font-family: "Marianne"; font-style: normal; font-weight: 700; font-display: swap; src: url("assets/fonts/Marianne-Bold.woff2") format("woff2"); }
+
+/* Marianne — fichiers du paquet officiel DSFR via jsDelivr (CDN tiers). */
+
+/* Tokens La Suite × Marianne — palette France */
+:root {
+  --font-base: "Marianne", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --sp-4xs: 0.125rem; --sp-3xs: 0.25rem; --sp-2xs: 0.375rem; --sp-xs: 0.5rem; --sp-sm: 0.75rem;
+  --sp-base: 1rem; --sp-md: 1.5rem; --sp-lg: 2rem; --sp-xl: 2.5rem; --sp-xxl: 3rem;
+  --radius-input: 4px; --radius-button: 4px; --radius-badge: 8px; --radius-card: 8px;
+  --fs-xs: 0.75rem; --fs-sm: 0.875rem; --fs-md: 1rem; --fs-lg: 1.125rem; --fs-xl: 1.25rem;
+  --fs-h3: 1.5rem; --fs-h2: 1.75rem; --fs-h1: 2rem;
+  --brand-050: #EDF0FF; --brand-500: #4C6CEF; --brand-650: #2845C1; --brand-700: #223E9E;
+  --text: #181B24; --text-muted: #555E74; --text-subtle: #7B8498;
+  --surface: #FFFFFF; --surface-2: #F6F8F9; --border: #DFE2EA; --border-strong: #C1C7D3;
+  --success: #40836F; --warning: #B85F03; --danger: #E32C39; --info: #3677CC;
+  --accent: var(--brand-650); --accent-hover: var(--brand-700);
+  --accent-soft: rgba(40, 69, 193, 0.10); --on-accent: #FFFFFF;
+  --control-border: var(--text-muted); --badge-background: var(--accent-soft);
+  --status-text: var(--text); --focus-ring: var(--accent);
+  /* Bleu France / Rouge Marianne du bloc-marque (couleurs officielles DSFR). */
+  --rf-blue: #000091; --rf-red: #E1000F;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #F8F8F9; --text-muted: #A9A9BF; --text-subtle: #75758A;
+    --surface: #25252F; --surface-2: #2F303D; --border: #3A3A4C; --border-strong: #515164;
+    --accent: #BEC5F0; --accent-hover: #D5DBFF; --accent-soft: rgba(190, 197, 240, 0.16);
+    --on-accent: #1B1B23; --rf-blue: #F8F8F9;
+    color-scheme: dark;
+  }
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  font-family: var(--font-base); font-size: var(--fs-md); line-height: 1.5;
+  color: var(--text); background: var(--surface-2);
+}
+a { color: var(--accent); text-underline-offset: 3px; }
+a:hover { color: var(--accent-hover); }
+:where(a, button, input):focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+
+.skip-link { position: absolute; left: var(--sp-base); top: -100px; background: var(--surface); padding: var(--sp-xs) var(--sp-base); border-radius: var(--radius-button); z-index: 10; }
+.skip-link:focus { top: var(--sp-xs); }
+
+.site-header { background: var(--surface); border-bottom: 1px solid var(--border); }
+.container { max-width: 72rem; margin: 0 auto; padding: 0 var(--sp-base); }
+.header-inner { display: flex; align-items: center; gap: var(--sp-md); flex-wrap: wrap; padding: var(--sp-base) 0; }
+.service-name { display: flex; align-items: center; gap: var(--sp-sm); }
+.logo-plate { display: block; height: 40px; width: auto; background: #FFFFFF; border-radius: var(--radius-input); }
+.logo-lasuite { margin-left: auto; padding: 2px 4px; }
+/* Bloc-marque officiel (Gouvernement / DINUM) : image blanche, posée sur une tuile claire. */
+.bloc-marque-img { display: block; height: 56px; width: auto; background: #FFFFFF; border-radius: var(--radius-input); margin: 0 0 var(--sp-sm); }
+/* Sur petit écran, l’en-tête passe sur plusieurs lignes : on retire l’alignement à droite. */
+@media (max-width: 480px) {
+  .logo-lasuite { margin-left: 0; }
+}
+.service-name strong { display: block; font-size: var(--fs-xl); font-weight: 700; }
+.service-name span { font-size: var(--fs-sm); color: var(--text-muted); }
+
+.main { padding: var(--sp-xxl) var(--sp-base); }
+.panel { max-width: 42rem; margin: 0 auto; }
+.panel h1 { font-size: var(--fs-h1); line-height: 1.2; font-weight: 700; margin: 0 0 var(--sp-sm); }
+.lead { color: var(--text-muted); font-size: var(--fs-lg); margin: 0 0 var(--sp-lg); }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-card); padding: var(--sp-lg); box-shadow: 0 1px 2px rgba(24, 27, 36, 0.04); }
+@media (max-width: 480px) { .card { padding: var(--sp-md); } .main { padding: var(--sp-lg) var(--sp-sm); } }
+
+.label { display: block; font-weight: 500; margin-bottom: var(--sp-3xs); }
+.hint { display: block; color: var(--text-muted); font-size: var(--fs-sm); margin-bottom: var(--sp-xs); }
+.field-row { display: flex; gap: var(--sp-xs); flex-wrap: wrap; }
+.input {
+  flex: 1 1 14rem; min-width: 0; min-height: 40px; padding: var(--sp-xs) var(--sp-sm);
+  font: inherit; font-size: var(--fs-md); color: var(--text); background: var(--surface);
+  border: 1px solid var(--control-border); border-radius: var(--radius-input);
+  transition: border-color .15s, box-shadow .15s;
+}
+.input:focus-visible { box-shadow: 0 0 0 3px var(--accent-soft); border-color: var(--accent); }
+.input[aria-invalid="true"] { border-color: var(--danger); }
+.btn {
+  min-height: 40px; padding: var(--sp-xs) var(--sp-base); font: inherit; font-size: var(--fs-sm); font-weight: 500;
+  border-radius: var(--radius-button); cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: var(--sp-xs);
+  transition: background-color .15s, border-color .15s, color .15s;
+}
+.btn-primary { background: var(--accent); color: var(--on-accent); border: 1px solid var(--accent); font-weight: 700; }
+.btn-primary:hover:not(:disabled) { background: var(--accent-hover); border-color: var(--accent-hover); }
+.btn-primary:disabled { cursor: progress; opacity: 0.85; }
+.btn-secondary { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+.btn-secondary:hover { background: var(--accent-soft); }
+@media (max-width: 480px) { .field-row .btn { flex: 1 1 100%; } }
+.error-msg { color: var(--text); font-size: var(--fs-sm); margin-top: var(--sp-xs); display: flex; gap: var(--sp-2xs); align-items: flex-start; }
+.error-msg svg { color: var(--danger); flex-shrink: 0; margin-top: 2px; }
+
+.status-zone:empty { display: none; }
+.status-zone { margin-top: var(--sp-md); }
+.result { border: 1px solid var(--border); border-left-width: 4px; border-radius: var(--radius-card); padding: var(--sp-base); display: flex; gap: var(--sp-sm); color: var(--status-text); background: var(--surface); }
+.result[data-tone="open"] { border-left-color: var(--success); }
+.result[data-tone="closed"] { border-left-color: var(--warning); }
+.result[data-tone="unknown"], .result[data-tone="loading"] { border-left-color: var(--info); }
+.result[data-tone="error"] { border-left-color: var(--danger); }
+.result-icon { flex-shrink: 0; margin-top: 2px; }
+.result-title { font-weight: 700; margin: 0; }
+.result-domain { display: inline-block; margin: var(--sp-3xs) 0 0; padding: var(--sp-4xs) var(--sp-xs); background: var(--badge-background); border-radius: var(--radius-badge); font-size: var(--fs-sm); overflow-wrap: anywhere; }
+.result-note { margin: var(--sp-xs) 0 0; color: var(--text-muted); font-size: var(--fs-sm); }
+.result-body { margin: var(--sp-xs) 0 0; }
+.result-body p { margin: var(--sp-xs) 0 0; }
+.result-actions { margin-top: var(--sp-sm); }
+.result-actions a.external::after { content: " ↗"; }
+.spin { animation: spin 1s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.site-footer { background: var(--surface); border-top: 1px solid var(--border); padding: var(--sp-lg) 0; margin-top: var(--sp-xxl); font-size: var(--fs-sm); }
+.footer-links, .footer-legal { list-style: none; padding: 0; margin: var(--sp-base) 0 0; display: flex; flex-wrap: wrap; gap: var(--sp-xs) var(--sp-md); }
+.footer-legal { border-top: 1px solid var(--border); padding-top: var(--sp-base); }
+.footer-links a, .footer-legal a { color: var(--text-muted); display: inline-block; min-height: 40px; line-height: 40px; }
+.footer-text { color: var(--text-muted); margin: var(--sp-base) 0 0; }
+.noscript { max-width: 42rem; margin: var(--sp-base) auto 0; padding: var(--sp-base); border: 1px solid var(--border); border-radius: var(--radius-card); background: var(--surface); }
+.icon { width: 20px; height: 20px; flex-shrink: 0; }
+.error-msg .icon { width: 16px; height: 16px; }
+[hidden] { display: none !important; }

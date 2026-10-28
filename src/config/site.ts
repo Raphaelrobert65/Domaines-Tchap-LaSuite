@@ -14,7 +14,7 @@ export const LINKS: Record<
 > = {
   tchap: null, // ex. URL d'accès à Tchap — à confirmer
   help: null,
-  requestOpening: null, // demande d'ouverture d'un domaine — à confirmer
+  requestOpening: "https://demarche.numerique.gouv.fr/commencer/utiliser-tchap", // demande d'accès / ouverture d'une administration
   legal: null, // mentions légales
   accessibility: null, // déclaration d'accessibilité
   privacy: null, // données personnelles

@@ -136,12 +136,12 @@ function Result({ state, onRetry }: { state: Exclude<State, { kind: "idle" }>; o
           <span className="">Domaine vérifié : </span>
           {state.domain}
         </p>
-        {state.kind !== "loading" && state.kind !== "error" && <p className="result-note">{NOTE}</p>}
+        {state.kind === "closed" && <ClosedMessage />}
+        {state.kind !== "loading" && state.kind !== "error" && state.kind !== "closed" && (
+          <p className="result-note">{NOTE}</p>
+        )}
         {state.kind === "open" && LINKS.tchap && (
           <div className="result-actions"><a className="btn btn-secondary" href={LINKS.tchap}>Accéder à Tchap</a></div>
-        )}
-        {state.kind === "closed" && LINKS.requestOpening && (
-          <div className="result-actions"><a className="btn btn-secondary" href={LINKS.requestOpening}>Demander l’ouverture</a></div>
         )}
         {state.kind === "error" && (
           <div className="result-actions">

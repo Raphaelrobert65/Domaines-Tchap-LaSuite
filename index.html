@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Votre domaine est-il ouvert sur Tchap ? – Tchap</title>
+  <meta name="description" content="Renseignez le domaine de votre adresse professionnelle pour vérifier son ouverture sur Tchap." />
+  <meta property="og:title" content="Votre domaine est-il ouvert sur Tchap ? – Tchap" />
+  <meta property="og:description" content="Renseignez le domaine de votre adresse professionnelle pour vérifier son ouverture sur Tchap." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src https://matrix.agent.dinum.tchap.gouv.fr; img-src 'self'; style-src 'self'; script-src 'self'; font-src 'self'; base-uri 'none'; form-action 'none'" />
+  <meta name="referrer" content="no-referrer" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="preload" href="assets/fonts/Marianne-Regular.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="service-name">
+        <img class="logo-plate" src="assets/logo-tchap.jpg" alt="" width="40" height="40" />
+        <div>
+          <strong>Tchap</strong>
+          <span>La messagerie instantanée du secteur public</span>
+        </div>
+      </div>
+      <img class="logo-plate logo-lasuite" src="assets/logo-lasuite.jpg" alt="LaSuite" width="102" height="40" />
+    </div>
+  </header>
+
+  <main id="contenu" class="main" tabindex="-1">
+    <div class="panel">
+      <h1>Votre domaine est-il ouvert sur Tchap ?</h1>
+      <p class="lead">Renseignez le domaine de votre adresse professionnelle pour vérifier son ouverture sur Tchap.</p>
+      <noscript>
+        <p class="noscript">Cette vérification nécessite JavaScript. Activez-le dans votre navigateur pour utiliser le service.</p>
+      </noscript>
+      <div class="card">
+        <form id="check-form" novalidate>
+          <label class="label" for="domain-in">Domaine professionnel</label>
+          <span class="hint" id="domain-hint">La partie située après le @ dans votre adresse professionnelle. Exemple : beta.gouv.fr</span>
+          <div class="field-row">
+            <input id="domain-in" class="input" type="text" inputmode="url" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="beta.gouv.fr" aria-describedby="domain-hint" />
+            <button type="submit" class="btn btn-primary" id="submit-btn">Vérifier mon domaine</button>
+          </div>
+          <p class="error-msg" id="domain-err" hidden>
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+            <span>Saisissez un domaine valide, par exemple beta.gouv.fr, sans adresse email ni https://.</span>
+          </p>
+        </form>
+        <div class="status-zone" id="status" role="status" aria-live="polite"></div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <img class="bloc-marque-img" src="assets/logo-gouvernement.png" alt="Gouvernement – Direction interministérielle du numérique" width="1200" height="420" />
+      <ul class="footer-links">
+        <li><a href="https://www.info.gouv.fr" rel="noopener">info.gouv.fr</a></li>
+        <li><a href="https://www.service-public.fr" rel="noopener">service-public.fr</a></li>
+        <li><a href="https://www.legifrance.gouv.fr" rel="noopener">legifrance.gouv.fr</a></li>
+        <li><a href="https://www.data.gouv.fr" rel="noopener">data.gouv.fr</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

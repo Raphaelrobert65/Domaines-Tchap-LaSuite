@@ -152,3 +152,29 @@ function Result({ state, onRetry }: { state: Exclude<State, { kind: "idle" }>; o
     </div>
   );
 }
+
+/** Message affiché quand le domaine (ou l'un de ses sous-domaines) n'est pas encore ouvert. */
+function ClosedMessage() {
+  return (
+    <div className="result-body">
+      <p>Votre administration n’est pas encore présente sur Tchap&nbsp;!</p>
+      {LINKS.requestOpening && (
+        <div className="result-actions">
+          <a
+            className="btn btn-secondary external"
+            href={LINKS.requestOpening}
+            target="_blank"
+            rel="noopener"
+          >
+            Demander l’accès à Tchap pour votre administration
+          </a>
+        </div>
+      )}
+      <p>
+        L’équipe Tchap ouvrira l’accès à votre administration si toutes les conditions sont
+        remplies (délai&nbsp;: environ 15&nbsp;jours).
+      </p>
+      <p>Les agents de votre administration pourront ensuite s’inscrire et communiquer sur Tchap.</p>
+    </div>
+  );
+}

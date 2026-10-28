@@ -9,7 +9,7 @@ Page publique statique (HTML, CSS, JavaScript natifs) : l’usager saisit le dom
 | `index.html` | Page (textes, structure, accessibilité, CSP) |
 | `styles.css` | Charte La Suite × Marianne, mode sombre, mobile |
 | `app.js` | Validation, appel API Tchap, classification, affichage |
-| `assets/` | Logos, favicon, polices Marianne (DSFR 1.13.0) servies localement |
+| `assets/` | Logos (logotype Tchap transparente, LaSuite, bloc-marque Gouvernement), favicon dérivé du logotype Tchap, polices Marianne (DSFR 1.13.0) servies localement |
 | `.nojekyll` | Désactive Jekyll sur GitHub Pages |
 | `netlify.toml` | Publication Netlify de la racine, sans build |
 

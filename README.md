@@ -58,7 +58,7 @@ L’API renvoie la même instance pour un domaine et pour ses sous-domaines : un
 ## Contenus manquants avant publication
 
 Dans `src/config/site.ts`, ces valeurs sont **non renseignées** (liens masqués) : accès Tchap, aide, mentions légales, déclaration d’accessibilité, données personnelles, plan du site. Le lien de demande d’accès est en revanche renseigné : `https://demarche.numerique.gouv.fr/commencer/utiliser-tchap`.
-Marque : le bloc-marque « République Française » est rendu en texte seul ; **le logo Marianne officiel et le logo Tchap/La Suite ne sont pas fournis** — à ajouter depuis les fichiers de marque officiels.
+Marque : les logos Tchap, La Suite et Gouvernement / DINUM sont intégrés (fichiers fournis par l’équipe, servis depuis `src/assets/*.asset.json`). Le pied de page affiche encore le bloc-marque en texte seul : à remplacer par le fichier officiel si l’équipe le souhaite.
 Aucune mention de conformité RGAA n’est affichée (pas d’audit).
 
 ## Licence

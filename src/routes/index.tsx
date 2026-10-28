@@ -3,6 +3,7 @@ import { DomainChecker } from "@/components/DomainChecker";
 import { INSTITUTIONAL_LINKS, LINKS } from "@/config/site";
 import tchapLogo from "@/assets/logo-tchap.png.asset.json";
 import lasuiteLogo from "@/assets/logo-lasuite.png.asset.json";
+import gouvLogo from "@/assets/logo-gouvernement.png.asset.json";
 
 const TITLE = "Votre domaine est-il ouvert sur Tchap ? – Tchap";
 const DESC = "Renseignez le domaine de votre adresse professionnelle pour vérifier son ouverture sur Tchap.";
@@ -34,11 +35,13 @@ function Index() {
       <a className="skip-link" href="#contenu">Aller au contenu</a>
       <header className="site-header">
         <div className="container header-inner">
-          <p className="bloc-marque" style={{ margin: 0 }}>
-            République
-            <br />
-            Française
-          </p>
+          <img
+            className="bloc-marque-img"
+            src={gouvLogo.url}
+            alt="Gouvernement – Direction interministérielle du numérique"
+            width={1200}
+            height={420}
+          />
           <div className="service-name">
             <img className="logo-plate" src={tchapLogo.url} alt="" width={40} height={40} />
             <div>

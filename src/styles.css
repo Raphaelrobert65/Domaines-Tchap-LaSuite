@@ -103,7 +103,10 @@ a:hover { color: var(--accent-hover); }
 .result-title { font-weight: 700; margin: 0; }
 .result-domain { display: inline-block; margin: var(--sp-3xs) 0 0; padding: var(--sp-4xs) var(--sp-xs); background: var(--badge-background); border-radius: var(--radius-badge); font-size: var(--fs-sm); overflow-wrap: anywhere; }
 .result-note { margin: var(--sp-xs) 0 0; color: var(--text-muted); font-size: var(--fs-sm); }
+.result-body { margin: var(--sp-xs) 0 0; }
+.result-body p { margin: var(--sp-xs) 0 0; }
 .result-actions { margin-top: var(--sp-sm); }
+.result-actions a.external::after { content: " ↗"; }
 .spin { animation: spin 1s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
 

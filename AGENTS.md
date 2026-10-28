@@ -14,3 +14,4 @@
 - All public URLs/links live in `src/config/site.ts`; `null` means "not provided" and the link is hidden — never render `#` links.
 - No backend, no Lovable Cloud, no tracking: the page calls the Tchap API directly from the browser (CORS `*` observed).
 - Styling uses La Suite × Marianne tokens in `src/styles.css`, not shadcn defaults.
+- The "domain not open" answer (any domain or subdomain whose instance is not an agent one) shows the Tchap team's fixed copy and links to the access-request form whose URL lives in `src/config/site.ts` — keep the wording and URL verbatim unless the team restates them.

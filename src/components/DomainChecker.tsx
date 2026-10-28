@@ -136,12 +136,12 @@ function Result({ state, onRetry }: { state: Exclude<State, { kind: "idle" }>; o
           <span className="">Domaine vérifié : </span>
           {state.domain}
         </p>
-        {state.kind !== "loading" && state.kind !== "error" && <p className="result-note">{NOTE}</p>}
+        {state.kind === "closed" && <ClosedMessage />}
+        {state.kind !== "loading" && state.kind !== "error" && state.kind !== "closed" && (
+          <p className="result-note">{NOTE}</p>
+        )}
         {state.kind === "open" && LINKS.tchap && (
           <div className="result-actions"><a className="btn btn-secondary" href={LINKS.tchap}>Accéder à Tchap</a></div>
-        )}
-        {state.kind === "closed" && LINKS.requestOpening && (
-          <div className="result-actions"><a className="btn btn-secondary" href={LINKS.requestOpening}>Demander l’ouverture</a></div>
         )}
         {state.kind === "error" && (
           <div className="result-actions">
@@ -149,6 +149,32 @@ function Result({ state, onRetry }: { state: Exclude<State, { kind: "idle" }>; o
           </div>
         )}
       </div>
+    </div>
+  );
+}
+
+/** Message affiché quand le domaine (ou l'un de ses sous-domaines) n'est pas encore ouvert. */
+function ClosedMessage() {
+  return (
+    <div className="result-body">
+      <p>Votre administration n’est pas encore présente sur Tchap&nbsp;!</p>
+      {LINKS.requestOpening && (
+        <div className="result-actions">
+          <a
+            className="btn btn-secondary external"
+            href={LINKS.requestOpening}
+            target="_blank"
+            rel="noopener"
+          >
+            Demander l’accès à Tchap pour votre administration
+          </a>
+        </div>
+      )}
+      <p>
+        L’équipe Tchap ouvrira l’accès à votre administration si toutes les conditions sont
+        remplies (délai&nbsp;: environ 15&nbsp;jours).
+      </p>
+      <p>Les agents de votre administration pourront ensuite s’inscrire et communiquer sur Tchap.</p>
     </div>
   );
 }

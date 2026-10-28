@@ -1,33 +1,21 @@
 # Tchap — Vérification de l’ouverture d’un domaine
 
-Page publique unique (français) : la personne saisit son domaine professionnel et obtient son statut d’ouverture sur Tchap.
+Page publique statique (HTML, CSS, JavaScript natifs) : l’usager saisit le domaine de son adresse professionnelle et obtient son statut d’ouverture sur Tchap. Aucun serveur applicatif, aucun build, aucune dépendance à installer.
 
-## Pile réelle
-
-- **TanStack Start v1** (React 19, Vite) — imposé par Lovable. Ce n’est **pas** un fichier HTML autonome : le build produit un serveur (SSR) via Nitro.
-- Aucune base de données, aucune authentification, aucun service Lovable à l’exécution, aucun traqueur.
-- Icônes : `lucide-react`. Police : Marianne (fichiers DSFR 1.13.0 via jsDelivr, CDN tiers).
-- Composants La Suite (`@gouvfr-lasuite/ui-components`) **non installés** : la page n’utilise que champ, bouton et encart ; les tokens La Suite × Marianne sont reproduits dans `src/styles.css`. À réévaluer si l’équipe exige les composants officiels.
-
-## Fichiers
+## Version publiée (racine du dépôt)
 
 | Fichier | Rôle |
 |---|---|
-| `src/lib/tchap-check.ts` | Validation, classification, appel API (logique pure) |
-| `src/lib/tchap-check.test.ts` | Tests (réponses HTTP simulées, hors parcours public) |
-| `src/components/DomainChecker.tsx` | Formulaire et états |
-| `src/routes/index.tsx` | Page, en-tête, pied de page |
-| `src/config/site.ts` | Configuration centralisée (API, timeout, liens) |
-| `src/styles.css` | Tokens et styles |
+| `index.html` | Page (textes, structure, accessibilité, CSP) |
+| `styles.css` | Charte La Suite × Marianne, mode sombre, mobile |
+| `app.js` | Validation, appel API Tchap, classification, affichage |
+| `assets/` | Logos, favicon, polices Marianne (DSFR 1.13.0) servies localement |
+| `.nojekyll` | Désactive Jekyll sur GitHub Pages |
+| `netlify.toml` | Publication Netlify de la racine, sans build |
 
-## Lancement local / build / tests
+Tous les chemins sont relatifs : les mêmes fichiers fonctionnent à la racine d’un domaine et sous `/Domaines-Tchap-LaSuite/`.
 
-```sh
-bun install
-bun run dev      # http://localhost:8080
-bun run test     # vitest
-bun run build
-```
+Test local : `python3 -m http.server 8000` à la racine, puis http://localhost:8000.
 
 ## Contrat API
 
@@ -55,11 +43,33 @@ L’API renvoie la même instance pour un domaine et pour ses sous-domaines : un
 > Les agents de votre administration pourront ensuite s’inscrire et communiquer sur Tchap.
 
 
-## Contenus manquants avant publication
 
-Dans `src/config/site.ts`, ces valeurs sont **non renseignées** (liens masqués) : accès Tchap, aide, mentions légales, déclaration d’accessibilité, données personnelles, plan du site. Le lien de demande d’accès est en revanche renseigné : `https://demarche.numerique.gouv.fr/commencer/utiliser-tchap`.
-Marque : les logos Tchap, La Suite et Gouvernement / DINUM sont intégrés (fichiers fournis par l’équipe, servis depuis `src/assets/*.asset.json`). Le bloc-marque officiel figure en pied de page ; l’en-tête affiche Tchap et La Suite.
-Aucune mention de conformité RGAA n’est affichée (pas d’audit).
+## Publication
+
+### GitHub Pages
+1. Dépôt → *Settings* → *Pages*.
+2. *Source* : « Deploy from a branch », branche `main`, dossier `/ (root)`.
+3. Le site est servi sous `https://<compte>.github.io/Domaines-Tchap-LaSuite/`.
+
+### Netlify
+1. *Add new site* → *Import from Git* → choisir le dépôt.
+2. Laisser la commande de build vide, dossier publié `.` (déjà défini dans `netlify.toml`).
+3. Rattacher ensuite le domaine définitif.
+
+## Fichiers conservés pour la prévisualisation Lovable
+
+L’éditeur Lovable impose une application TanStack Start pour son aperçu. Les fichiers `src/`, `public/`, `package.json`, `bun.lock`, `vite.config.ts`, `vitest.config.ts`, `tsconfig.json`, `eslint.config.js`, `components.json`, `bunfig.toml` ne servent **qu’à cet aperçu** et aux tests unitaires de la logique (`src/lib/tchap-check.test.ts`). Ils ne sont ni nécessaires ni utilisés par le site publié. Si le projet quitte Lovable, ils peuvent être supprimés. Toute modification de la logique doit être reportée dans `app.js` (version de référence).
+
+## Vérifications
+
+Exécutées :
+- Serveur HTTP statique à la racine et sous `/Domaines-Tchap-LaSuite/` : styles, script, logos et police Marianne chargés, aucune erreur console ni ressource en erreur.
+- Formulaire : `https://x.fr` → message de validation ; `Beta.GOUV.fr` → « ouvert » (appel réel à l’API) ; `example.invalid` → message « non ouvert » avec lien vers le formulaire.
+
+Restantes :
+- Appel API depuis le domaine GitHub Pages réel (CORS `*` observé en direct, à confirmer une fois déployé).
+- Déploiement Netlify et domaine définitif.
+- Liens légaux (mentions légales, accessibilité, données personnelles) : non fournis, donc non affichés.
 
 ## Licence
 
@@ -67,13 +77,3 @@ Le code original de ce projet est distribué sous licence [MIT](LICENSE) — `Co
 
 Les dépendances npm, la police Marianne, ainsi que les logos et éléments de marque Tchap, La Suite et République Française conservent leurs licences et conditions d'utilisation respectives ; cette licence MIT ne les couvre pas.
 
-## GitHub
-
-Dans Lovable : *Connectors → GitHub → Connect project*, choisir le compte/organisation ; Lovable crée le dépôt et synchronise la branche par défaut. Aucun dépôt n’est connecté à ce jour.
-Branches conseillées : `main` = travail (synchronisée avec Lovable), `production` = mise en production (fusion manuelle).
-
-## Netlify
-
-- Site → *Import from Git* → dépôt ci-dessus, **branche de production : `production`** (les modifications Lovable sur `main` ne déploient alors qu’en preview).
-- `netlify.toml` fournit la commande de build et `NITRO_PRESET=netlify`. **Non testé sur Netlify** : vérifier le premier build et le dossier publié produit par le preset (fonctions + statiques). Aucun secret requis.
-- Domaine existant : *Domain management → Add a domain*, puis suivre les enregistrements DNS indiqués par Netlify.

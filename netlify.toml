@@ -1,7 +1,11 @@
-# À VÉRIFIER sur Netlify : le projet est en TanStack Start (rendu serveur via Nitro).
-# Le preset Nitro par défaut de la config Lovable vise Cloudflare ; on force Netlify ici.
+# Site statique : aucun build, aucune fonction serveur. Netlify publie la racine (index.html).
 [build]
-  command = "bun install --frozen-lockfile && bun run build"
+  publish = "."
+  command = ""
 
-[build.environment]
-  NITRO_PRESET = "netlify"
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "no-referrer"
+    X-Frame-Options = "DENY"

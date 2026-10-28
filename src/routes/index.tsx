@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { DomainChecker } from "@/components/DomainChecker";
 import { INSTITUTIONAL_LINKS, LINKS } from "@/config/site";
+import tchapLogo from "@/assets/logo-tchap.png.asset.json";
+import lasuiteLogo from "@/assets/logo-lasuite.png.asset.json";
 
 const TITLE = "Votre domaine est-il ouvert sur Tchap ? – Tchap";
 const DESC = "Renseignez le domaine de votre adresse professionnelle pour vérifier son ouverture sur Tchap.";
@@ -38,9 +40,13 @@ function Index() {
             Française
           </p>
           <div className="service-name">
-            <strong>Tchap</strong>
-            <span>La messagerie instantanée du secteur public</span>
+            <img className="logo-plate" src={tchapLogo.url} alt="" width={40} height={40} />
+            <div>
+              <strong>Tchap</strong>
+              <span>La messagerie instantanée du secteur public</span>
+            </div>
           </div>
+          <img className="logo-plate logo-lasuite" src={lasuiteLogo.url} alt="LaSuite" width={102} height={40} />
         </div>
       </header>
 

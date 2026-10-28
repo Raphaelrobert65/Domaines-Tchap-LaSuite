@@ -1,0 +1,30 @@
+/**
+ * Configuration publique centralisée.
+ * `null` = valeur NON RENSEIGNÉE : le lien correspondant n'est pas affiché.
+ */
+export const TCHAP_CONFIG = {
+  apiBaseUrl: "https://matrix.agent.dinum.tchap.gouv.fr/_matrix/identity/api/v1/info",
+  instanceSuffix: "tchap.gouv.fr",
+  timeoutMs: 10_000,
+} as const;
+
+export const LINKS: Record<
+  "tchap" | "help" | "requestOpening" | "legal" | "accessibility" | "privacy" | "sitemap",
+  string | null
+> = {
+  tchap: null, // ex. URL d'accès à Tchap — à confirmer
+  help: null,
+  requestOpening: null, // demande d'ouverture d'un domaine — à confirmer
+  legal: null, // mentions légales
+  accessibility: null, // déclaration d'accessibilité
+  privacy: null, // données personnelles
+  sitemap: null,
+};
+
+/** Liens institutionnels publics connus (sites gouvernementaux officiels). */
+export const INSTITUTIONAL_LINKS = [
+  { label: "info.gouv.fr", href: "https://www.info.gouv.fr" },
+  { label: "service-public.fr", href: "https://www.service-public.fr" },
+  { label: "legifrance.gouv.fr", href: "https://www.legifrance.gouv.fr" },
+  { label: "data.gouv.fr", href: "https://www.data.gouv.fr" },
+];

@@ -1,0 +1,7 @@
+# À VÉRIFIER sur Netlify : le projet est en TanStack Start (rendu serveur via Nitro).
+# Le preset Nitro par défaut de la config Lovable vise Cloudflare ; on force Netlify ici.
+[build]
+  command = "bun install --frozen-lockfile && bun run build"
+
+[build.environment]
+  NITRO_PRESET = "netlify"

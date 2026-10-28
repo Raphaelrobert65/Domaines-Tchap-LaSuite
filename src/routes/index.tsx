@@ -38,10 +38,10 @@ function Index() {
           <div className="service-name">
             {LINKS.tchap ? (
               <a className="logo-link" href={LINKS.tchap} aria-label="Tchap – découvrir le produit sur LaSuite">
-                <img className="logo-plate" src={tchapLogo.url} alt="" width={40} height={40} />
+                <img className="logo-plate" src={tchapLogo.url} alt="" width={33} height={40} />
               </a>
             ) : (
-              <img className="logo-plate" src={tchapLogo.url} alt="" width={40} height={40} />
+              <img className="logo-plate" src={tchapLogo.url} alt="" width={33} height={40} />
             )}
             <div>
               <strong>Tchap</strong>

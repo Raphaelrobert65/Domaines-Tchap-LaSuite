@@ -47,8 +47,8 @@ describe("appel réseau", () => {
   it("construit la requête sans cookie et medium vide", async () => {
     const f = ok({ hs: "agent.dinum.tchap.gouv.fr" });
     await expect(fetchInstanceFromDomain("beta.gouv.fr", undefined, f)).resolves.toBe("agent.dinum.tchap.gouv.fr");
-    expect(f.mock.calls[0][0]).toContain("?medium=&address=test%40beta.gouv.fr");
-    expect(f.mock.calls[0][1].credentials).toBe("omit");
+    expect(f.mock.calls[0]![0]).toContain("?medium=&address=test%40beta.gouv.fr");
+    expect((f.mock.calls[0]![1] as RequestInit).credentials).toBe("omit");
   });
   it.each([429, 500])("HTTP %i → erreur", async (s) => {
     const f = vi.fn().mockResolvedValue(new Response("x", { status: s }));

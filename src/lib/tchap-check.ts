@@ -25,7 +25,7 @@ export function isValidDomain(domain: string): boolean {
     // Tirets en positions 3-4 réservés au punycode.
     if (label.slice(2, 4) === "--" && !label.startsWith("xn--")) return false;
   }
-  return TLD_RE.test(labels[labels.length - 1]);
+  return TLD_RE.test(labels[labels.length - 1] ?? "");
 }
 
 /**

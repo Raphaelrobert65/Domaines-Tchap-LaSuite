@@ -61,6 +61,11 @@ a:hover { color: var(--accent-hover); }
 .logo-lasuite { margin-left: auto; padding: 2px 4px; }
 /* Bloc-marque officiel (Gouvernement / DINUM) : image blanche, posée sur une tuile claire. */
 .bloc-marque-img { display: block; height: 52px; width: auto; background: #FFFFFF; border-radius: var(--radius-input); }
+/* Sur petit écran, l’en-tête passe sur plusieurs lignes : on retire le séparateur et l’alignement à droite. */
+@media (max-width: 480px) {
+  .service-name { border-left: 0; padding-left: 0; }
+  .logo-lasuite { margin-left: 0; }
+}
 .service-name strong { display: block; font-size: var(--fs-xl); font-weight: 700; }
 .service-name span { font-size: var(--fs-sm); color: var(--text-muted); }
 

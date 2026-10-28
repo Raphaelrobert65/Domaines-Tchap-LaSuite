@@ -57,6 +57,7 @@ a:hover { color: var(--accent-hover); }
 .header-inner { display: flex; align-items: center; gap: var(--sp-md); flex-wrap: wrap; padding: var(--sp-base) 0; }
 .service-name { display: flex; align-items: center; gap: var(--sp-sm); }
 .logo-plate { display: block; height: 40px; width: auto; background: #FFFFFF; border-radius: var(--radius-input); }
+.logo-link { display: inline-flex; align-items: center; text-decoration: none; border-radius: var(--radius-input); }
 .logo-lasuite { margin-left: auto; padding: 2px 4px; }
 /* Bloc-marque officiel (Gouvernement / DINUM) : image blanche, posée sur une tuile claire. */
 .bloc-marque-img { display: block; height: 56px; width: auto; background: #FFFFFF; border-radius: var(--radius-input); margin: 0 0 var(--sp-sm); }

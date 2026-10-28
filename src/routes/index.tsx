@@ -21,7 +21,7 @@ export const Route = createFileRoute("/")({
 
 const legal = [
   { label: "Plan du site", href: LINKS.sitemap },
-  { label: "Accessibilité : non conforme", href: LINKS.accessibility },
+  { label: "Accessibilité", href: LINKS.accessibility },
   { label: "Mentions légales", href: LINKS.legal },
   { label: "Données personnelles", href: LINKS.privacy },
 ].filter((l): l is { label: string; href: string } => !!l.href);

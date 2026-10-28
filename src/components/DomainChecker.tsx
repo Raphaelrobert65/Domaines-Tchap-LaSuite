@@ -133,7 +133,7 @@ function Result({ state, onRetry }: { state: Exclude<State, { kind: "idle" }>; o
       <div>
         <p className="result-title">{title}</p>
         <p className="result-domain">
-          <span className="sr-only-label">Domaine vérifié : </span>
+          <span className="">Domaine vérifié : </span>
           {state.domain}
         </p>
         {state.kind !== "loading" && state.kind !== "error" && <p className="result-note">{NOTE}</p>}

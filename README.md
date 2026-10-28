@@ -61,6 +61,12 @@ Dans `src/config/site.ts`, ces valeurs sont **non renseignées** (liens masqués
 Marque : le bloc-marque « République Française » est rendu en texte seul ; **le logo Marianne officiel et le logo Tchap/La Suite ne sont pas fournis** — à ajouter depuis les fichiers de marque officiels.
 Aucune mention de conformité RGAA n’est affichée (pas d’audit).
 
+## Licence
+
+Le code original de ce projet est distribué sous licence [MIT](LICENSE) — `Copyright (c) 2026 Raphael Robert`.
+
+Les dépendances npm, la police Marianne, ainsi que les logos et éléments de marque Tchap, La Suite et République Française conservent leurs licences et conditions d'utilisation respectives ; cette licence MIT ne les couvre pas.
+
 ## GitHub
 
 Dans Lovable : *Connectors → GitHub → Connect project*, choisir le compte/organisation ; Lovable crée le dépôt et synchronise la branche par défaut. Aucun dépôt n’est connecté à ce jour.

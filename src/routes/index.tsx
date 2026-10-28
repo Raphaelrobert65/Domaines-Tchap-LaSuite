@@ -36,13 +36,25 @@ function Index() {
       <header className="site-header">
         <div className="container header-inner">
           <div className="service-name">
-            <img className="logo-plate" src={tchapLogo.url} alt="" width={40} height={40} />
+            {LINKS.tchap ? (
+              <a className="logo-link" href={LINKS.tchap} aria-label="Tchap – découvrir le produit sur LaSuite">
+                <img className="logo-plate" src={tchapLogo.url} alt="" width={40} height={40} />
+              </a>
+            ) : (
+              <img className="logo-plate" src={tchapLogo.url} alt="" width={40} height={40} />
+            )}
             <div>
               <strong>Tchap</strong>
               <span>La messagerie instantanée du secteur public</span>
             </div>
           </div>
-          <img className="logo-plate logo-lasuite" src={lasuiteLogo.url} alt="LaSuite" width={102} height={40} />
+          {LINKS.lasuite ? (
+            <a className="logo-link logo-lasuite" href={LINKS.lasuite} aria-label="LaSuite – découvrir LaSuite">
+              <img className="logo-plate" src={lasuiteLogo.url} alt="LaSuite" width={102} height={40} />
+            </a>
+          ) : (
+            <img className="logo-plate logo-lasuite" src={lasuiteLogo.url} alt="LaSuite" width={102} height={40} />
+          )}
         </div>
       </header>
 

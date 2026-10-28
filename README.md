@@ -65,6 +65,7 @@ L’éditeur Lovable impose une application TanStack Start pour son aperçu. Les
 Exécutées :
 - Serveur HTTP statique à la racine et sous `/Domaines-Tchap-LaSuite/` : styles, script, logos et police Marianne chargés, aucune erreur console ni ressource en erreur.
 - Formulaire : `https://x.fr` → message de validation ; `Beta.GOUV.fr` → « ouvert » (appel réel à l’API) ; `example.invalid` → message « non ouvert » avec lien vers le formulaire.
+- En-tête : le logo Tchap renvoie vers <https://lasuite.numerique.gouv.fr/produits/tchap>, le logo LaSuite vers <https://lasuite.numerique.gouv.fr/> (clic vérifié, les deux pages répondent en 200).
 
 Restantes :
 - Appel API depuis le domaine GitHub Pages réel (CORS `*` observé en direct, à confirmer une fois déployé).

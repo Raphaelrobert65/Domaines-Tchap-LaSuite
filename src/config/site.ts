@@ -9,10 +9,11 @@ export const TCHAP_CONFIG = {
 } as const;
 
 export const LINKS: Record<
-  "tchap" | "help" | "requestOpening" | "legal" | "accessibility" | "privacy" | "sitemap",
+  "tchap" | "lasuite" | "help" | "requestOpening" | "legal" | "accessibility" | "privacy" | "sitemap",
   string | null
 > = {
-  tchap: null, // ex. URL d'accès à Tchap — à confirmer
+  tchap: "https://lasuite.numerique.gouv.fr/produits/tchap", // page produit Tchap (LaSuite) — lien du logo Tchap
+  lasuite: "https://lasuite.numerique.gouv.fr/", // site LaSuite — lien du logo LaSuite
   help: null,
   requestOpening: "https://demarche.numerique.gouv.fr/commencer/utiliser-tchap", // demande d'accès / ouverture d'une administration
   legal: null, // mentions légales

@@ -35,13 +35,6 @@ function Index() {
       <a className="skip-link" href="#contenu">Aller au contenu</a>
       <header className="site-header">
         <div className="container header-inner">
-          <img
-            className="bloc-marque-img"
-            src={gouvLogo.url}
-            alt="Gouvernement – Direction interministérielle du numérique"
-            width={1200}
-            height={420}
-          />
           <div className="service-name">
             <img className="logo-plate" src={tchapLogo.url} alt="" width={40} height={40} />
             <div>
@@ -68,7 +61,13 @@ function Index() {
 
       <footer className="site-footer">
         <div className="container">
-          <p className="bloc-marque" style={{ margin: 0 }}>République<br />Française</p>
+          <img
+            className="bloc-marque-img"
+            src={gouvLogo.url}
+            alt="Gouvernement – Direction interministérielle du numérique"
+            width={1200}
+            height={420}
+          />
           <ul className="footer-links">
             {INSTITUTIONAL_LINKS.map((l) => (
               <li key={l.href}><a href={l.href} rel="noopener">{l.label}</a></li>

@@ -55,15 +55,13 @@ a:hover { color: var(--accent-hover); }
 .site-header { background: var(--surface); border-bottom: 1px solid var(--border); }
 .container { max-width: 72rem; margin: 0 auto; padding: 0 var(--sp-base); }
 .header-inner { display: flex; align-items: center; gap: var(--sp-md); flex-wrap: wrap; padding: var(--sp-base) 0; }
-.bloc-marque { font-weight: 700; font-size: var(--fs-sm); line-height: 1.05; text-transform: uppercase; letter-spacing: 0.01em; color: var(--text); }
-.service-name { border-left: 1px solid var(--border); padding-left: var(--sp-md); display: flex; align-items: center; gap: var(--sp-sm); }
+.service-name { display: flex; align-items: center; gap: var(--sp-sm); }
 .logo-plate { display: block; height: 40px; width: auto; background: #FFFFFF; border-radius: var(--radius-input); }
 .logo-lasuite { margin-left: auto; padding: 2px 4px; }
 /* Bloc-marque officiel (Gouvernement / DINUM) : image blanche, posée sur une tuile claire. */
-.bloc-marque-img { display: block; height: 52px; width: auto; background: #FFFFFF; border-radius: var(--radius-input); }
-/* Sur petit écran, l’en-tête passe sur plusieurs lignes : on retire le séparateur et l’alignement à droite. */
+.bloc-marque-img { display: block; height: 56px; width: auto; background: #FFFFFF; border-radius: var(--radius-input); margin: 0 0 var(--sp-sm); }
+/* Sur petit écran, l’en-tête passe sur plusieurs lignes : on retire l’alignement à droite. */
 @media (max-width: 480px) {
-  .service-name { border-left: 0; padding-left: 0; }
   .logo-lasuite { margin-left: 0; }
 }
 .service-name strong { display: block; font-size: var(--fs-xl); font-weight: 700; }

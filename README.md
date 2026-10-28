@@ -45,9 +45,19 @@ Observé le 28/10/2026 : HTTP 200, `Access-Control-Allow-Origin: *`. À revérif
 
 Limite : l’outil interne affichait « ouvert » pour toute chaîne sans « externe » ; ce n’est plus le cas. **À faire confirmer par l’équipe Tchap avant mise en production.**
 
+## Réponse « domaine non ouvert » (domaine et sous-domaines)
+
+L’API renvoie la même instance pour un domaine et pour ses sous-domaines : un sous-domaine non ouvert est donc classé comme le domaine parent. Dans ce cas, le message de l’équipe Tchap est affiché tel quel :
+
+> Votre administration n’est pas encore présente sur Tchap !
+> [Demander l’accès à Tchap pour votre administration](https://demarche.numerique.gouv.fr/commencer/utiliser-tchap)
+> L’équipe Tchap ouvrira l’accès à votre administration si toutes les conditions sont remplies (délai : environ 15 jours).
+> Les agents de votre administration pourront ensuite s’inscrire et communiquer sur Tchap.
+
+
 ## Contenus manquants avant publication
 
-Dans `src/config/site.ts`, toutes ces valeurs sont **non renseignées** (liens masqués) : accès Tchap, aide, demande d’ouverture, mentions légales, déclaration d’accessibilité, données personnelles, plan du site.
+Dans `src/config/site.ts`, ces valeurs sont **non renseignées** (liens masqués) : accès Tchap, aide, mentions légales, déclaration d’accessibilité, données personnelles, plan du site. Le lien de demande d’accès est en revanche renseigné : `https://demarche.numerique.gouv.fr/commencer/utiliser-tchap`.
 Marque : le bloc-marque « République Française » est rendu en texte seul ; **le logo Marianne officiel et le logo Tchap/La Suite ne sont pas fournis** — à ajouter depuis les fichiers de marque officiels.
 Aucune mention de conformité RGAA n’est affichée (pas d’audit).
 
